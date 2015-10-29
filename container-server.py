@@ -110,10 +110,8 @@ def images_remove_all():
     Force remove all images - dangrous!
 
     """
-    all = docker_images_to_array(docker('images'))
-    for i in all:
-        docker('rmi', i['id'])
-    resp = '{"count": "%d"}' % len(all)
+ 
+    resp = ''
     return Response(response=resp, mimetype="application/json")
 
 
